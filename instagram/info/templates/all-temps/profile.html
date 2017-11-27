@@ -1,0 +1,14 @@
+{%extends 'all-temps/base.html'%} {% load bootstrap3 %} {% load staticfiles %} {%block content%}
+<div class="settings">
+    <a href="/logout"><img src="{% static 'img/setting.png'%}" alt="setting" class="img-responsive" style="height:3vh;"></a>
+</div>
+<div class="container">
+<div class="infomation">
+        <h1>{{user_info.username}}</h1>
+        <img src="{{article.image.url}}"  alt="">
+</div>
+</div>
+{%endblock%}
+
+
+<!-- https://www.codewars.com/kata/create-phone-number/train/python -->
