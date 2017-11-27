@@ -1,0 +1,21 @@
+{%extends 'all-temps/base.html'%} {% load staticfiles %} {%block content%}
+
+<div class="image">
+        <img src="{% static 'img/bg.jpg'%}" alt="Instagram" class="img-responsive"style='height:68vh;width:100%' >
+</div>
+<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-lg-offset-4 ">
+
+        
+        <!-Some code above--->
+        {% for user_image in images %}
+
+        <a href="{%url 'profile' user_image.id%}">{{user_image.user.username}}</a>
+        <!--Display news Article images  -->
+        <div class="col-md-12">
+                <img src="{{user_image.image.url}}" class="img-responsive" alt="Image" style='height:60vh;width:400px%>
+                <a href="{% url 'photo_comment' user_image.id %}">{{user_image.caption}}</a>
+        </div>
+        {%endfor%}
+        <!-Some code below--->
+</div>
+{%endblock%}
